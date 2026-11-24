@@ -6,6 +6,10 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 13:09:15 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/24 14:37:32 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/24 15:24:38 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int	ft_printf(const char *format, ...)
+{
+}
