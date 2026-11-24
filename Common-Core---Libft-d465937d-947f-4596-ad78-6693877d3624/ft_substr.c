@@ -1,0 +1,63 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/03 15:30:34 by urastell          #+#    #+#             */
+/*   Updated: 2026/11/16 15:57:13 by urastell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	i;
+	size_t	s_len;
+	char	*str;
+
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (len > s_len - start)
+		len = s_len - start;
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = s[start + i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+/*
+#include <stdio.h>
+
+static void	show(const char *call, char *got, const char *want)
+{
+	if (got)
+		printf("%s -> \"%s\"  (attendu \"%s\")\n", call, got, want);
+	else
+		printf("%s -> NULL  (attendu \"%s\")\n", call, want);
+	free(got);
+}
+
+int	main(void)
+{
+	show("ft_substr(\"hello\", 1, 3)  ", ft_substr("hello", 1, 3), "ell");
+	show("ft_substr(\"hello\", 2, 100)", ft_substr("hello", 2, 100), "llo");
+	show("ft_substr(\"hello\", 5, 2)  ", ft_substr("hello", 5, 2), "");
+	show("ft_substr(\"hello\", 400, 2)", ft_substr("hello", 400, 2), "");
+	show("ft_substr(\"hello\", 0, 0)  ", ft_substr("hello", 0, 0), "");
+	show("ft_substr(\"\", 0, 5)       ", ft_substr("", 0, 5), "");
+	return (0);
+}
+*/
