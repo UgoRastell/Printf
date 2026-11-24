@@ -6,10 +6,23 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 13:09:15 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/24 15:38:05 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/24 15:57:11 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_printf(const char *format, ...)
 {
+	int		i;
+	char	c;
+
+	i = 0;
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			c = format[i];
+		}
+		i++;
+	}
 }
